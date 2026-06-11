@@ -11,10 +11,15 @@ on:
     # entries from very long schedule lists, so all of June 11's match-window
     # crons silently never fired. Now the workflow wakes every 15 minutes
     # during the tournament and the guard decides in ~5s whether to proceed.
-    - cron: '0 4 * * *' # daily full refresh, 04:00 UTC
-    - cron: '*/15 * 11-30 6 *' # June 11-30: every 15 min (gated)
-    - cron: '*/15 * 1-19 7 *' # July 1-19: every 15 min (gated)
+    - cron: '23 4 * * *' # daily full refresh (off-peak minute)
+    - cron: '7,22,37,52 * 11-30 6 *' # June 11-30: 15-min grid, off-peak minutes (gated)
+    - cron: '7,22,37,52 * 1-19 7 *' # July 1-19: 15-min grid, off-peak minutes (gated)
   workflow_dispatch:
+    inputs:
+      relay:
+        description: internal — set by the self-relay; window-gated like cron
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -32,7 +37,7 @@ jobs:
       - uses: actions/checkout@v4
       - id: guard
         run: |
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.relay }}" != "true" ]; then
             echo "run=true" >> "$GITHUB_OUTPUT"
             echo "cron-guard: manual dispatch -> run=true"
           else
@@ -124,3 +129,27 @@ jobs:
           path: dist
       - id: deployment
         uses: actions/deploy-pages@v4
+
+  relay:
+    needs: update
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Sleep one cadence step, then re-dispatch if still in a match window
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          sleep 780
+          RUN=$(node -e "
+            const fs=require('fs');
+            const {matches}=JSON.parse(fs.readFileSync('public/data/matches.json','utf8'));
+            const now=Date.now();
+            const ok=matches.some(m=>{const ko=Date.parse(m.date);return now>=ko-25*60000&&now<=ko+225*60000});
+            console.log(ok?'true':'false');
+          ")
+          echo "relay: in-window=$RUN"
+          if [ "$RUN" = "true" ]; then
+            gh workflow run update-data.yml -f relay=true --repo "$GITHUB_REPOSITORY"
+          fi
