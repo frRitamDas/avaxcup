@@ -1,16 +1,16 @@
 {
  "scorers": [
   {
-   "id": "390670",
-   "name": "Cyle LARIN",
-   "code": "CAN",
-   "goals": 1,
-   "ownGoals": 0
-  },
-  {
    "id": "466624",
    "name": "Folarin BALOGUN",
    "code": "USA",
+   "goals": 2,
+   "ownGoals": 0
+  },
+  {
+   "id": "390670",
+   "name": "Cyle LARIN",
+   "code": "CAN",
    "goals": 1,
    "ownGoals": 0
   },
