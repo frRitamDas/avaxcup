@@ -362,7 +362,7 @@
    "date": "2026-06-13T22:00:00Z",
    "venueId": "400257536",
    "status": "scheduled",
-   "time": "0'",
+   "time": null,
    "home": {
     "code": "BRA",
     "score": null,
@@ -420,11 +420,11 @@
    "group": "B",
    "date": "2026-06-13T19:00:00Z",
    "venueId": "400257521",
-   "status": "live",
-   "time": "86'",
+   "status": "finished",
+   "time": "98'",
    "home": {
     "code": "QAT",
-    "score": 0,
+    "score": 1,
     "pen": null
    },
    "away": {

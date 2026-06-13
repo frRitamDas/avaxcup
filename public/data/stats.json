@@ -8,6 +8,13 @@
    "ownGoals": 0
   },
   {
+   "id": "385067",
+   "name": "BOUALEM KHOUKHI",
+   "code": "QAT",
+   "goals": 1,
+   "ownGoals": 0
+  },
+  {
    "id": "390670",
    "name": "Cyle LARIN",
    "code": "CAN",
@@ -224,7 +231,7 @@
    }
   ]
  },
- "attAvg": 59826,
+ "attAvg": 61454,
  "biggestWin": {
   "diff": 3,
   "id": "400021458",
