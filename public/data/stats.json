@@ -83,6 +83,20 @@
    "code": "USA",
    "goals": 1,
    "ownGoals": 0
+  },
+  {
+   "id": "448598",
+   "name": "SAIBARI",
+   "code": "MAR",
+   "goals": 1,
+   "ownGoals": 0
+  },
+  {
+   "id": "405742",
+   "name": "VINI JR.",
+   "code": "BRA",
+   "goals": 1,
+   "ownGoals": 0
   }
  ],
  "cards": {
