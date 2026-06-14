@@ -539,7 +539,7 @@
    "date": "2026-06-14T17:00:00Z",
    "venueId": "400249385",
    "status": "live",
-   "time": "15'",
+   "time": "29'",
    "home": {
     "code": "GER",
     "score": 1,
@@ -547,7 +547,7 @@
    },
    "away": {
     "code": "CUW",
-    "score": 0,
+    "score": 1,
     "pen": null
    },
    "phA": "E1",
