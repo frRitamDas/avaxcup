@@ -137,6 +137,56 @@ L'application est un site statique avec routage par hash et chemins d'actifs rel
 2. `deploy.yml` compile et publie à chaque push vers `main` (les changements purement documentaires et purement liés au pipeline sont ignorés).
 3. `update-data.yml` actualise les données selon le planning dicté par les matchs ci-dessus et redéploie. Sa table cron est générée à partir du calendrier fixe des matchs ; exécutez `bun run gencron` si une heure de coup d'envoi venait à changer.
 
+### 🐳 Docker (auto-hébergement)
+
+Une petite image (nginx servant la PWA compilée) publiée sur **`ghcr.io/26worldcup/26worldcup`**. L'endroit où elle lit les données des matchs est défini par la variable d'environnement `DATA_SOURCE` ; l'application est servie sur **http://localhost:8080** dans les deux cas.
+
+| `DATA_SOURCE` | `/data/*.json` depuis | Fraîcheur | Réseau |
+| --- | --- | --- | --- |
+| `remote` *(par défaut)* | relayé par proxy inverse depuis le site en ligne | toujours à jour, y compris les scores en direct | sortant vers `REMOTE_DATA_HOST` |
+| `self` | un conteneur secondaire de mise à jour qui exécute le pipeline de données | quasi en direct (selon son propre `UPDATE_INTERVAL`) | sortant vers FIFA/Wikipédia/Open-Meteo |
+
+#### 1. Mode `remote` (par défaut) : données toujours fraîches relayées depuis le site en ligne
+
+**1.1 Utiliser l'image préconstruite** (sans clonage) :
+
+```bash
+docker run -d -p 8080:80 ghcr.io/26worldcup/26worldcup:latest
+```
+
+**1.2 Construire la vôtre** (modifications locales, ou avant qu'une image ne soit publiée) :
+
+```bash
+git clone https://github.com/26worldcup/26worldcup.github.io.git
+cd 26worldcup.github.io
+docker build -t ghcr.io/26worldcup/26worldcup:latest .          # build l'image locale
+docker run -d -p 8080:80 ghcr.io/26worldcup/26worldcup:latest   # même tag → exécute votre build, sans pull
+```
+
+#### 2. Mode `self` : auto-actualisé, sans dépendance au site en ligne
+
+Deux conteneurs partagent un volume : le serveur web (`DATA_SOURCE=self`) et un conteneur de mise à jour qui réexécute le pipeline de données toutes les `UPDATE_INTERVAL` secondes (par défaut `900` = 15 min). Le volume est initialisé à partir de l'instantané intégré à l'image, donc le site fonctionne immédiatement et est remplacé par des données fraîches après la première exécution.
+
+**2.1 Utiliser les images préconstruites** (sans clonage), exécuter la paire directement :
+
+```bash
+docker volume create wc-data
+docker run -d -p 8080:80 -e DATA_SOURCE=self --restart unless-stopped \
+  -v wc-data:/usr/share/nginx/html/data \
+  ghcr.io/26worldcup/26worldcup:latest
+docker run -d -e UPDATE_INTERVAL=900 --restart unless-stopped \
+  -v wc-data:/app/public/data \
+  ghcr.io/26worldcup/26worldcup-updater:latest
+```
+
+**2.2 Construire les vôtres** (Compose construit à la fois l'image web et celle de mise à jour) :
+
+```bash
+git clone https://github.com/26worldcup/26worldcup.github.io.git
+cd 26worldcup.github.io
+docker compose -f docker-compose.yml -f docker-compose.self.yml up -d --build
+```
+
 ### ⚙️ Technologie
 
 React 19 · TypeScript · Vite · pas de backend, aucune dépendance à l'exécution au-delà de React + Router. Du SVG partout : le terrain avec les compositions, la carte projetée de l'Amérique du Nord, le tableau final, le logo.

@@ -137,6 +137,56 @@ bun run preview
 2. `deploy.yml` 会在每次推送到 `main` 时构建并发布（仅涉及文档和仅涉及流水线的改动会被跳过）。
 3. `update-data.yml` 会按上述以比赛为驱动的调度刷新数据并重新部署。它的 cron 表是根据固定的比赛日历生成的；如果某场比赛的开球时间发生变化，请运行 `bun run gencron`。
 
+### 🐳 Docker（自托管）
+
+一个小巧的镜像（由 nginx 提供已构建的 PWA），发布于 **`ghcr.io/26worldcup/26worldcup`**。它从何处读取比赛数据由 `DATA_SOURCE` 环境变量决定；无论哪种方式，应用都在 **http://localhost:8080** 上提供服务。
+
+| `DATA_SOURCE` | `/data/*.json` 来自 | 时效性 | 网络 |
+| --- | --- | --- | --- |
+| `remote` *（默认）* | 从在线站点反向代理 | 始终最新，含实时比分 | 向 `REMOTE_DATA_HOST` 发出出站请求 |
+| `self` | 运行数据流水线的更新器边车容器 | 接近实时（由自身的 `UPDATE_INTERVAL` 决定） | 向 FIFA/维基百科/Open-Meteo 发出出站请求 |
+
+#### 1. `remote` 模式（默认）：从在线站点代理的始终最新的数据
+
+**1.1 使用预构建镜像**（无需克隆）：
+
+```bash
+docker run -d -p 8080:80 ghcr.io/26worldcup/26worldcup:latest
+```
+
+**1.2 自行构建**（有本地改动，或在镜像发布之前）：
+
+```bash
+git clone https://github.com/26worldcup/26worldcup.github.io.git
+cd 26worldcup.github.io
+docker build -t ghcr.io/26worldcup/26worldcup:latest .          # 构建本地镜像
+docker run -d -p 8080:80 ghcr.io/26worldcup/26worldcup:latest   # 相同标签 → 运行你的构建，不会拉取
+```
+
+#### 2. `self` 模式：自我更新，不依赖在线站点
+
+两个容器共享一个数据卷：Web 服务器（`DATA_SOURCE=self`）和一个每隔 `UPDATE_INTERVAL` 秒（默认 `900` = 15 分钟）重新运行数据流水线的更新器。该数据卷以镜像中预置的快照作为初始内容，因此站点可立即工作，并在首次运行后被最新数据替换。
+
+**2.1 使用预构建镜像**（无需克隆），直接运行这一对容器：
+
+```bash
+docker volume create wc-data
+docker run -d -p 8080:80 -e DATA_SOURCE=self --restart unless-stopped \
+  -v wc-data:/usr/share/nginx/html/data \
+  ghcr.io/26worldcup/26worldcup:latest
+docker run -d -e UPDATE_INTERVAL=900 --restart unless-stopped \
+  -v wc-data:/app/public/data \
+  ghcr.io/26worldcup/26worldcup-updater:latest
+```
+
+**2.2 自行构建**（Compose 会同时构建 Web 镜像和更新器镜像）：
+
+```bash
+git clone https://github.com/26worldcup/26worldcup.github.io.git
+cd 26worldcup.github.io
+docker compose -f docker-compose.yml -f docker-compose.self.yml up -d --build
+```
+
 ### ⚙️ 技术栈
 
 React 19 · TypeScript · Vite · 无后端，除 React + Router 外无任何运行时依赖。全程使用 SVG：含首发阵容的球场、投影后的北美地图、对阵图、Logo。
