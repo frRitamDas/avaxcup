@@ -443,7 +443,7 @@
     "zh-TW": "民主剛果"
    },
    "iso2": "CD",
-   "ranking": 46,
+   "ranking": 45,
    "rankingPrev": 46,
    "baseCamp": {
     "city": "Houston",
@@ -1728,7 +1728,7 @@
     "zh-TW": "卡達"
    },
    "iso2": "QA",
-   "ranking": 50,
+   "ranking": 49,
    "rankingPrev": 56,
    "baseCamp": {
     "city": "Santa Barbara",
@@ -1820,7 +1820,7 @@
     "uk": "Шотландія"
    },
    "iso2": "GB-SCT",
-   "ranking": 37,
+   "ranking": 38,
    "rankingPrev": 42,
    "baseCamp": {
     "city": "Charlotte",
@@ -1958,7 +1958,7 @@
     "zh-TW": "瑞典"
    },
    "iso2": "SE",
-   "ranking": 39,
+   "ranking": 35,
    "rankingPrev": 38,
    "baseCamp": {
     "city": "Frisco",
@@ -2004,7 +2004,7 @@
     "zh-TW": "突尼西亞"
    },
    "iso2": "TN",
-   "ranking": 45,
+   "ranking": 56,
    "rankingPrev": 45,
    "baseCamp": {
     "city": "Monterrey",
@@ -2188,7 +2188,7 @@
     "zh-TW": "烏茲別克"
    },
    "iso2": "UZ",
-   "ranking": 51,
+   "ranking": 50,
    "rankingPrev": 50,
    "baseCamp": {
     "city": "Marietta",

@@ -15,6 +15,20 @@
    "ownGoals": 0
   },
   {
+   "id": "489688",
+   "name": "Yasin AYARI",
+   "code": "SWE",
+   "goals": 2,
+   "ownGoals": 0
+  },
+  {
+   "id": "430150",
+   "name": "Alexander ISAK",
+   "code": "SWE",
+   "goals": 1,
+   "ownGoals": 0
+  },
+  {
    "id": "430822",
    "name": "Amad DIALLO",
    "code": "CIV",
@@ -120,6 +134,13 @@
    "ownGoals": 0
   },
   {
+   "id": "433795",
+   "name": "Mattias SVANBERG",
+   "code": "SWE",
+   "goals": 1,
+   "ownGoals": 0
+  },
+  {
    "id": "495046",
    "name": "MAURICIO",
    "code": "PAR",
@@ -162,6 +183,13 @@
    "ownGoals": 0
   },
   {
+   "id": "433367",
+   "name": "Omar REKIK",
+   "code": "TUN",
+   "goals": 1,
+   "ownGoals": 0
+  },
+  {
    "id": "356731",
    "name": "RAÚL",
    "code": "MEX",
@@ -190,6 +218,13 @@
    "ownGoals": 0
   },
   {
+   "id": "483327",
+   "name": "Viktor GYOKERES",
+   "code": "SWE",
+   "goals": 1,
+   "ownGoals": 0
+  },
+  {
    "id": "405742",
    "name": "VINI JR.",
    "code": "BRA",
@@ -205,7 +240,7 @@
   }
  ],
  "cards": {
-  "yellow": 32,
+  "yellow": 33,
   "red": 3,
   "players": [
    {
@@ -350,7 +385,7 @@
    }
   ]
  },
- "attAvg": 64560,
+ "attAvg": 63429,
  "biggestWin": {
   "diff": 6,
   "id": "400021464",
