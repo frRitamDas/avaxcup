@@ -10994,11 +10994,11 @@
   ]
  },
  "TUN": {
-  "coach": "Sabri Lamouchi (fired after one match);  Hervé Renard (second match onwards)",
+  "coach": "Sabri Lamouchi was fired after the first match on June 15 and replaced by  Hervé Renard the next day.",
   "coachWiki": "https://en.wikipedia.org/wiki/Sabri_Lamouchi",
   "wiki": {
-   "title": "Sweden men's national football team",
-   "url": "https://en.wikipedia.org/wiki/Sweden_men's_national_football_team"
+   "title": "Tunisia national football team",
+   "url": "https://en.wikipedia.org/wiki/Tunisia_national_football_team"
   },
   "players": [
    {
@@ -15334,7 +15334,7 @@
     "clubWiki": "https://en.wikipedia.org/wiki/AC_Milan",
     "captain": false,
     "wiki": "https://en.wikipedia.org/wiki/Mike_Maignan",
-    "wcApps": 0,
+    "wcApps": 1,
     "wcGoals": 0,
     "wcYellow": 0,
     "wcRed": 0
@@ -15406,7 +15406,7 @@
     "clubWiki": "https://en.wikipedia.org/wiki/FC_Bayern_Munich",
     "captain": false,
     "wiki": "https://en.wikipedia.org/wiki/Dayot_Upamecano",
-    "wcApps": 0,
+    "wcApps": 1,
     "wcGoals": 0,
     "wcYellow": 0,
     "wcRed": 0
@@ -15424,7 +15424,7 @@
     "clubWiki": "https://en.wikipedia.org/wiki/FC_Barcelona",
     "captain": false,
     "wiki": "https://en.wikipedia.org/wiki/Jules_Kound%C3%A9",
-    "wcApps": 0,
+    "wcApps": 1,
     "wcGoals": 0,
     "wcYellow": 0,
     "wcRed": 0
@@ -15460,7 +15460,7 @@
     "clubWiki": "https://en.wikipedia.org/wiki/Arsenal_F.C.",
     "captain": false,
     "wiki": "https://en.wikipedia.org/wiki/William_Saliba",
-    "wcApps": 0,
+    "wcApps": 1,
     "wcGoals": 0,
     "wcYellow": 0,
     "wcRed": 0
@@ -15478,7 +15478,7 @@
     "clubWiki": "https://en.wikipedia.org/wiki/Al_Hilal_SFC",
     "captain": false,
     "wiki": "https://en.wikipedia.org/wiki/Th%C3%A9o_Hernandez",
-    "wcApps": 0,
+    "wcApps": 1,
     "wcGoals": 0,
     "wcYellow": 0,
     "wcRed": 0
@@ -15550,7 +15550,7 @@
     "clubWiki": "https://en.wikipedia.org/wiki/Real_Madrid_CF",
     "captain": false,
     "wiki": "https://en.wikipedia.org/wiki/Aur%C3%A9lien_Tchouam%C3%A9ni",
-    "wcApps": 0,
+    "wcApps": 1,
     "wcGoals": 0,
     "wcYellow": 0,
     "wcRed": 0
@@ -15586,7 +15586,7 @@
     "clubWiki": "https://en.wikipedia.org/wiki/AC_Milan",
     "captain": false,
     "wiki": "https://en.wikipedia.org/wiki/Adrien_Rabiot",
-    "wcApps": 0,
+    "wcApps": 1,
     "wcGoals": 0,
     "wcYellow": 0,
     "wcRed": 0
@@ -15658,7 +15658,7 @@
     "clubWiki": "https://en.wikipedia.org/wiki/Paris_Saint-Germain_FC",
     "captain": false,
     "wiki": "https://en.wikipedia.org/wiki/Ousmane_Demb%C3%A9l%C3%A9",
-    "wcApps": 0,
+    "wcApps": 1,
     "wcGoals": 0,
     "wcYellow": 0,
     "wcRed": 0
@@ -15694,7 +15694,7 @@
     "clubWiki": "https://en.wikipedia.org/wiki/Real_Madrid_CF",
     "captain": false,
     "wiki": "https://en.wikipedia.org/wiki/Kylian_Mbapp%C3%A9",
-    "wcApps": 0,
+    "wcApps": 1,
     "wcGoals": 0,
     "wcYellow": 0,
     "wcRed": 0
@@ -15712,7 +15712,7 @@
     "clubWiki": "https://en.wikipedia.org/wiki/FC_Bayern_Munich",
     "captain": false,
     "wiki": "https://en.wikipedia.org/wiki/Michael_Olise",
-    "wcApps": 0,
+    "wcApps": 1,
     "wcGoals": 0,
     "wcYellow": 0,
     "wcRed": 0
@@ -15748,7 +15748,7 @@
     "clubWiki": "https://en.wikipedia.org/wiki/Paris_Saint-Germain_FC",
     "captain": false,
     "wiki": "https://en.wikipedia.org/wiki/D%C3%A9sir%C3%A9_Dou%C3%A9",
-    "wcApps": 0,
+    "wcApps": 1,
     "wcGoals": 0,
     "wcYellow": 0,
     "wcRed": 0
@@ -16768,7 +16768,7 @@
     "clubWiki": "https://en.wikipedia.org/wiki/Al-Ahli_Saudi_FC",
     "captain": false,
     "wiki": "https://en.wikipedia.org/wiki/%C3%89douard_Mendy",
-    "wcApps": 0,
+    "wcApps": 1,
     "wcGoals": 0,
     "wcYellow": 0,
     "wcRed": 0
@@ -16822,7 +16822,7 @@
     "clubWiki": "https://en.wikipedia.org/wiki/Al_Hilal_SFC",
     "captain": false,
     "wiki": "https://en.wikipedia.org/wiki/Kalidou_Koulibaly",
-    "wcApps": 0,
+    "wcApps": 1,
     "wcGoals": 0,
     "wcYellow": 0,
     "wcRed": 0
@@ -16876,7 +16876,7 @@
     "clubWiki": "https://en.wikipedia.org/wiki/AS_Monaco_FC",
     "captain": false,
     "wiki": "https://en.wikipedia.org/wiki/Kr%C3%A9pin_Diatta",
-    "wcApps": 0,
+    "wcApps": 1,
     "wcGoals": 0,
     "wcYellow": 0,
     "wcRed": 0
@@ -16894,7 +16894,7 @@
     "clubWiki": "https://en.wikipedia.org/wiki/Olympique_Lyonnais",
     "captain": false,
     "wiki": "https://en.wikipedia.org/wiki/Moussa_Niakhat%C3%A9",
-    "wcApps": 0,
+    "wcApps": 1,
     "wcGoals": 0,
     "wcYellow": 0,
     "wcRed": 0
@@ -16930,7 +16930,7 @@
     "clubWiki": "https://en.wikipedia.org/wiki/West_Ham_United_F.C.",
     "captain": false,
     "wiki": "https://en.wikipedia.org/wiki/El_Hadji_Malick_Diouf",
-    "wcApps": 0,
+    "wcApps": 1,
     "wcGoals": 0,
     "wcYellow": 0,
     "wcRed": 0
@@ -16948,7 +16948,7 @@
     "clubWiki": "https://en.wikipedia.org/wiki/Everton_F.C.",
     "captain": false,
     "wiki": "https://en.wikipedia.org/wiki/Idrissa_Gueye",
-    "wcApps": 0,
+    "wcApps": 1,
     "wcGoals": 0,
     "wcYellow": 0,
     "wcRed": 0
@@ -16984,7 +16984,7 @@
     "clubWiki": "https://en.wikipedia.org/wiki/AS_Monaco_FC",
     "captain": false,
     "wiki": "https://en.wikipedia.org/wiki/Lamine_Camara",
-    "wcApps": 0,
+    "wcApps": 1,
     "wcGoals": 0,
     "wcYellow": 0,
     "wcRed": 0
@@ -17056,7 +17056,7 @@
     "clubWiki": "https://en.wikipedia.org/wiki/Villarreal_CF",
     "captain": false,
     "wiki": "https://en.wikipedia.org/wiki/Pape_Gueye",
-    "wcApps": 0,
+    "wcApps": 1,
     "wcGoals": 0,
     "wcYellow": 0,
     "wcRed": 0
@@ -17110,7 +17110,7 @@
     "clubWiki": "https://en.wikipedia.org/wiki/Al-Nassr_FC",
     "captain": false,
     "wiki": "https://en.wikipedia.org/wiki/Sadio_Man%C3%A9",
-    "wcApps": 0,
+    "wcApps": 1,
     "wcGoals": 0,
     "wcYellow": 0,
     "wcRed": 0
@@ -17128,7 +17128,7 @@
     "clubWiki": "https://en.wikipedia.org/wiki/FC_Bayern_Munich",
     "captain": false,
     "wiki": "https://en.wikipedia.org/wiki/Nicolas_Jackson",
-    "wcApps": 0,
+    "wcApps": 1,
     "wcGoals": 0,
     "wcYellow": 0,
     "wcRed": 0
@@ -17182,7 +17182,7 @@
     "clubWiki": "https://en.wikipedia.org/wiki/Crystal_Palace_F.C.",
     "captain": false,
     "wiki": "https://en.wikipedia.org/wiki/Isma%C3%AFla_Sarr",
-    "wcApps": 0,
+    "wcApps": 1,
     "wcGoals": 0,
     "wcYellow": 0,
     "wcRed": 0
@@ -20868,24 +20868,6 @@
     "wcRed": 0
    },
    {
-    "id": "jaloliddin-masharipov",
-    "no": 10,
-    "pos": "MF",
-    "name": "Jaloliddin Masharipov",
-    "dob": "1993-09-01",
-    "caps": 74,
-    "goals": 12,
-    "club": "Esteghlal",
-    "clubNat": "IRN",
-    "clubWiki": "https://en.wikipedia.org/wiki/Esteghlal_F.C.",
-    "captain": false,
-    "wiki": "https://en.wikipedia.org/wiki/Jaloliddin_Masharipov",
-    "wcApps": 0,
-    "wcGoals": 0,
-    "wcYellow": 0,
-    "wcRed": 0
-   },
-   {
     "id": "oston-urunov",
     "no": 11,
     "pos": "MF",
@@ -20970,6 +20952,24 @@
     "clubWiki": "https://en.wikipedia.org/wiki/FC_Bukhara",
     "captain": false,
     "wiki": "https://en.wikipedia.org/wiki/Sherzod_Esanov",
+    "wcApps": 0,
+    "wcGoals": 0,
+    "wcYellow": 0,
+    "wcRed": 0
+   },
+   {
+    "id": "ruslanbek-jiyanov",
+    "no": 10,
+    "pos": "FW",
+    "name": "Ruslanbek Jiyanov",
+    "dob": "2001-06-05",
+    "caps": 5,
+    "goals": 0,
+    "club": "Navbahor Namangan",
+    "clubNat": "UZB",
+    "clubWiki": "https://en.wikipedia.org/wiki/PFC_Navbahor_Namangan",
+    "captain": false,
+    "wiki": "https://en.wikipedia.org/wiki/Ruslanbek_Jiyanov",
     "wcApps": 0,
     "wcGoals": 0,
     "wcYellow": 0,
