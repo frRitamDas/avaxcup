@@ -121,7 +121,7 @@
     "zh-TW": "澳洲"
    },
    "iso2": "AU",
-   "ranking": 23,
+   "ranking": 22,
    "rankingPrev": 27,
    "baseCamp": {
     "city": "Oakland",
@@ -167,7 +167,7 @@
     "zh-TW": "奧地利"
    },
    "iso2": "AT",
-   "ranking": 24,
+   "ranking": 23,
    "rankingPrev": 24,
    "baseCamp": {
     "city": "Goleta",
@@ -627,7 +627,7 @@
     "zh-TW": "古拉索"
    },
    "iso2": "CW",
-   "ranking": 82,
+   "ranking": 83,
    "rankingPrev": 82,
    "baseCamp": {
     "city": "Boca Raton",
@@ -1041,7 +1041,7 @@
     "zh-TW": "海地"
    },
    "iso2": "HT",
-   "ranking": 84,
+   "ranking": 85,
    "rankingPrev": 83,
    "baseCamp": {
     "city": "Galloway",
@@ -1087,7 +1087,7 @@
     "zh-TW": "伊朗"
    },
    "iso2": "IR",
-   "ranking": 20,
+   "ranking": 25,
    "rankingPrev": 20,
    "baseCamp": {
     "city": "Tijuana",
@@ -1271,7 +1271,7 @@
     "zh-TW": "南韓"
    },
    "iso2": "KR",
-   "ranking": 22,
+   "ranking": 21,
    "rankingPrev": 25,
    "baseCamp": {
     "city": "Guadalajara",
@@ -1547,7 +1547,7 @@
     "zh-TW": "紐西蘭"
    },
    "iso2": "NZ",
-   "ranking": 85,
+   "ranking": 79,
    "rankingPrev": 85,
    "baseCamp": {
     "city": "San Diego",
