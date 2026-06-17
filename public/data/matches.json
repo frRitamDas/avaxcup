@@ -1312,16 +1312,16 @@
    "group": "L",
    "date": "2026-06-17T20:00:00Z",
    "venueId": "400257526",
-   "status": "scheduled",
-   "time": null,
+   "status": "live",
+   "time": "30'",
    "home": {
     "code": "ENG",
-    "score": null,
+    "score": 1,
     "pen": null
    },
    "away": {
     "code": "CRO",
-    "score": null,
+    "score": 0,
     "pen": null
    },
    "phA": "L1",

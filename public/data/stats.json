@@ -225,6 +225,14 @@
    "ownGoals": 0
   },
   {
+   "id": "369419",
+   "name": "KANE",
+   "code": "ENG",
+   "no": 9,
+   "goals": 1,
+   "ownGoals": 0
+  },
+  {
    "id": "441170",
    "name": "Ladislav KREJCI",
    "code": "CZE",
@@ -309,14 +317,6 @@
    "name": "Nathaniel BROWN",
    "code": "GER",
    "no": 18,
-   "goals": 1,
-   "ownGoals": 0
-  },
-  {
-   "id": "486306",
-   "name": "Nestory IRANKUNDA",
-   "code": "AUS",
-   "no": 17,
    "goals": 1,
    "ownGoals": 0
   }

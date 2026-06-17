@@ -14727,7 +14727,14 @@
      "y": null
     }
    ],
-   "goals": [],
+   "goals": [
+    {
+     "player": "369419",
+     "minute": "12'",
+     "type": 1,
+     "period": 3
+    }
+   ],
    "bookings": [],
    "substitutions": []
   },
@@ -15023,6 +15030,27 @@
      "y": null
     }
    ],
+   "goals": [],
+   "bookings": [],
+   "substitutions": []
+  },
+  "matchTime": "30'",
+  "period": 3,
+  "final": false
+ },
+ "400021510": {
+  "home": {
+   "tactics": null,
+   "xi": [],
+   "subs": [],
+   "goals": [],
+   "bookings": [],
+   "substitutions": []
+  },
+  "away": {
+   "tactics": null,
+   "xi": [],
+   "subs": [],
    "goals": [],
    "bookings": [],
    "substitutions": []
