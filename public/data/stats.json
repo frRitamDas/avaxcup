@@ -185,6 +185,14 @@
    "ownGoals": 0
   },
   {
+   "id": "484141",
+   "name": "JOÃO NEVES",
+   "code": "POR",
+   "no": 15,
+   "goals": 1,
+   "ownGoals": 0
+  },
+  {
    "id": "401334",
    "name": "John McGINN",
    "code": "SCO",
@@ -311,18 +319,10 @@
    "no": 17,
    "goals": 1,
    "ownGoals": 0
-  },
-  {
-   "id": "492363",
-   "name": "NMECHA",
-   "code": "GER",
-   "no": 23,
-   "goals": 1,
-   "ownGoals": 0
   }
  ],
  "cards": {
-  "yellow": 43,
+  "yellow": 44,
   "red": 3,
   "players": [
    {
@@ -386,6 +386,14 @@
     "name": "Alistair JOHNSTON",
     "code": "CAN",
     "no": 2,
+    "y": 1,
+    "r": 0
+   },
+   {
+    "id": "395205",
+    "name": "BERNARDO",
+    "code": "POR",
+    "no": 10,
     "y": 1,
     "r": 0
    },
@@ -474,14 +482,6 @@
     "name": "Jackson POROZO",
     "code": "ECU",
     "no": 25,
-    "y": 1,
-    "r": 0
-   },
-   {
-    "id": "419473",
-    "name": "JASSEM GABER",
-    "code": "QAT",
-    "no": 5,
     "y": 1,
     "r": 0
    }
