@@ -41,6 +41,14 @@
    "ownGoals": 0
   },
   {
+   "id": "229397",
+   "name": "MESSI",
+   "code": "ARG",
+   "no": 10,
+   "goals": 2,
+   "ownGoals": 0
+  },
+  {
    "id": "489688",
    "name": "Yasin AYARI",
    "code": "SWE",
@@ -253,14 +261,6 @@
    "name": "MBAYE",
    "code": "SEN",
    "no": 20,
-   "goals": 1,
-   "ownGoals": 0
-  },
-  {
-   "id": "229397",
-   "name": "MESSI",
-   "code": "ARG",
-   "no": 10,
    "goals": 1,
    "ownGoals": 0
   },
