@@ -2734,7 +2734,7 @@
     "clubWiki": "https://en.wikipedia.org/wiki/RSC_Anderlecht",
     "captain": false,
     "wiki": "https://en.wikipedia.org/wiki/Nathan_Saliba",
-    "wcApps": 0,
+    "wcApps": 1,
     "wcGoals": 0,
     "wcYellow": 0,
     "wcRed": 0
@@ -3086,7 +3086,7 @@
     "clubWiki": "https://en.wikipedia.org/wiki/Al-Arabi_SC_(Qatar)",
     "captain": false,
     "wiki": "https://en.wikipedia.org/wiki/Al-Hashmi_Al-Hussain",
-    "wcApps": 0,
+    "wcApps": 1,
     "wcGoals": 0,
     "wcYellow": 0,
     "wcRed": 0
@@ -3179,7 +3179,7 @@
     "wcApps": 2,
     "wcGoals": 0,
     "wcYellow": 0,
-    "wcRed": 0
+    "wcRed": 1
    },
    {
     "id": "ahmed-alaaeldin",

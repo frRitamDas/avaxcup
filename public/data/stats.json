@@ -323,8 +323,16 @@
  ],
  "cards": {
   "yellow": 59,
-  "red": 5,
+  "red": 6,
   "players": [
+   {
+    "id": "386348",
+    "name": "A. MADIBO",
+    "code": "QAT",
+    "no": 23,
+    "y": 0,
+    "r": 1
+   },
    {
     "id": "395516",
     "name": "Cesar MONTES",
@@ -474,14 +482,6 @@
     "name": "Cesar BLACKMAN",
     "code": "PAN",
     "no": 2,
-    "y": 1,
-    "r": 0
-   },
-   {
-    "id": "356532",
-    "name": "Chancel MBEMBA",
-    "code": "COD",
-    "no": 22,
     "y": 1,
     "r": 0
    }
@@ -653,6 +653,19 @@
    }
   ],
   "QAT": [
+   {
+    "id": "386348",
+    "name": "A. MADIBO",
+    "bans": [
+     {
+      "type": "red",
+      "due": [
+       "400021450"
+      ],
+      "banned": "400021448"
+     }
+    ]
+   },
    {
     "id": "419441",
     "name": "HOMAM AHMED",
