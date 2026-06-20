@@ -9562,11 +9562,17 @@
      "minute": "4'",
      "card": 1,
      "period": 3
+    },
+    {
+     "player": null,
+     "minute": "37'",
+     "card": 1,
+     "period": 3
     }
    ],
    "substitutions": []
   },
-  "matchTime": "33'",
+  "matchTime": "45'+1'",
   "period": 3,
   "final": false
  },

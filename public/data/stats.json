@@ -322,7 +322,7 @@
   }
  ],
  "cards": {
-  "yellow": 76,
+  "yellow": 77,
   "red": 6,
   "players": [
    {
@@ -379,6 +379,13 @@
     "code": "RSA",
     "no": 4,
     "y": 2,
+    "r": 0
+   },
+   {
+    "id": null,
+    "name": "#null",
+    "code": "PAR",
+    "y": 1,
     "r": 0
    },
    {
@@ -474,14 +481,6 @@
     "name": "Brian GUTIERREZ",
     "code": "MEX",
     "no": 26,
-    "y": 1,
-    "r": 0
-   },
-   {
-    "id": "506279",
-    "name": "Caleb YIRENKYI",
-    "code": "GHA",
-    "no": 3,
     "y": 1,
     "r": 0
    }
