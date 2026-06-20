@@ -17,6 +17,14 @@
    "ownGoals": 0
   },
   {
+   "id": "424051",
+   "name": "Brian BROBBEY",
+   "code": "NED",
+   "no": 19,
+   "goals": 2,
+   "ownGoals": 0
+  },
+  {
    "id": "390670",
    "name": "Cyle LARIN",
    "code": "CAN",
@@ -309,14 +317,6 @@
    "name": "JOAO NEVES",
    "code": "POR",
    "no": 15,
-   "goals": 1,
-   "ownGoals": 0
-  },
-  {
-   "id": "401334",
-   "name": "John McGINN",
-   "code": "SCO",
-   "no": 7,
    "goals": 1,
    "ownGoals": 0
   }
