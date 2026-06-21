@@ -25,6 +25,14 @@
    "ownGoals": 0
   },
   {
+   "id": "430413",
+   "name": "Ayase UEDA",
+   "code": "JPN",
+   "no": 18,
+   "goals": 2,
+   "ownGoals": 0
+  },
+  {
    "id": "424051",
    "name": "Brian BROBBEY",
    "code": "NED",
@@ -205,14 +213,6 @@
    "name": "Anthony ELANGA",
    "code": "SWE",
    "no": 11,
-   "goals": 1,
-   "ownGoals": 0
-  },
-  {
-   "id": "430413",
-   "name": "Ayase UEDA",
-   "code": "JPN",
-   "no": 18,
    "goals": 1,
    "ownGoals": 0
   },
@@ -486,7 +486,7 @@
    }
   ]
  },
- "attAvg": 64477,
+ "attAvg": 64110,
  "biggestWin": {
   "diff": 6,
   "id": "400021464",
