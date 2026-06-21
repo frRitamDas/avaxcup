@@ -201,6 +201,7 @@ export interface SquadPlayer {
   clubWiki?: string | null // club's English Wikipedia article URL
   captain: boolean
   wiki: string | null // English Wikipedia article URL
+  photo?: string | null // official FIFA headshot base URL (digitalhub.fifa.com)
 }
 
 export interface TeamSquad {

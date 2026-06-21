@@ -23,7 +23,7 @@ README in [français](README.fr.md) · [中文](README.zh.md)
 ### 👕 Teams & players
 
 - 🧢 **48 team pages**: live FIFA ranking, coach, group table, full fixtures, training base camp (with map + Google Maps links), official website, and Wikipedia links
-- 👥 **Official 26-player squads**: numbers, positions, ages, caps, goals, clubs; every player links to their English Wikipedia article
+- 👥 **Official 26-player squads**: official FIFA player headshots, numbers, positions, ages, caps, goals, clubs; every player links to their English Wikipedia article
 - ⭐ **Favorites**: star the teams you follow and filter the schedule to them
 
 ### 🗺️ Venues & maps
@@ -68,7 +68,7 @@ All data comes from free, authoritative sources, with no API keys anywhere:
 
 | Source | Provides |
 |---|---|
-| FIFA public API | fixtures, scores, line-ups, referees, localized names, world ranking |
+| FIFA public API | fixtures, scores, line-ups, referees, localized names, world ranking, official player headshots |
 | Wikipedia | official 26-player squads (numbers, caps, goals, clubs, coaches) |
 | Open-Meteo | hourly stadium weather forecasts and base-camp geocoding |
 | martj42/international_results (CC0) | historical results feeding the Elo win-probability model |

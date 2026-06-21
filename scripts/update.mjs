@@ -14,6 +14,9 @@
  * Usage:
  *   bun run update            refresh everything: matches, standings, squads,
  *                             lineups, stats, weather
+ *   bun run update --fetch-photos
+ *                             also refresh player-photos.json from FIFA (optional;
+ *                             the default update never changes photo URLs)
  *
  * Output: public/data/*.json (consumed by the app at runtime)
  */
@@ -56,6 +59,7 @@ function withCldrNames(name, iso2) {
 const LANGS = ['en', 'fr', 'zh', 'ar', 'es', 'de', 'pt', 'it', 'ja', 'ko', 'id', 'ru']
 
 const SKIP_WEATHER = process.argv.includes('--skip-weather')
+const FETCH_PHOTOS = process.argv.includes('--fetch-photos')
 
 const errors = []
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a)
@@ -1151,6 +1155,96 @@ async function downloadFlags(fifaIso, broadcasters) {
   return codes.size
 }
 
+// ------------------------------------------------ player photos (official FIFA headshots)
+
+// FIFA's per-team squad endpoint carries each player's official headshot on
+// digitalhub.fifa.com (PlayerPicture.PictureUrl) keyed by the FIFA player id. We
+// keep just the URLs — no image download — in a lookup JSON, and stamp the matching
+// URL onto each Wikipedia squad player (joined by shirt number) so the team page can
+// link to it directly. The stored URL is the untransformed base; the UI appends the
+// `?io=transform:…` crop/size params it wants.
+function normName(s) {
+  return (s || '')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z]+/g, '')
+}
+
+async function fetchFifaPhotos(fifaTeamIds, squads) {
+  const photos = {} // FIFA player id -> { url, code, no, name }
+  let teamsOk = 0
+  for (const [code, sq] of Object.entries(squads)) {
+    const idTeam = fifaTeamIds[code]
+    if (!safeId(idTeam)) continue
+    let data
+    try {
+      data = await fetchJson(
+        `${FIFA}/teams/${idTeam}/squad?idCompetition=${ID_COMPETITION}&idSeason=${ID_SEASON}&language=en`,
+      )
+    } catch (e) {
+      warn(`fifa photos ${code}: ${e.message}`)
+      continue
+    }
+    const fifaPlayers = data?.Players || []
+    if (!fifaPlayers.length) continue
+    teamsOk++
+    // index the FIFA roster by shirt number and by normalized name for the join
+    const byNo = {}
+    const byName = {}
+    for (const fp of fifaPlayers) {
+      const url = fp.PlayerPicture?.PictureUrl
+      if (!url || !/^https:\/\/digitalhub\.fifa\.com\//.test(url)) continue
+      const entry = { url, no: fp.JerseyNum ?? null, name: txt(fp.PlayerName) }
+      if (safeId(fp.IdPlayer)) photos[fp.IdPlayer] = { ...entry, code }
+      if (fp.JerseyNum != null) byNo[fp.JerseyNum] = url
+      const nm = normName(txt(fp.PlayerName))
+      if (nm) byName[nm] = url
+    }
+    // stamp the URL onto each Wikipedia squad player: shirt number first, then name
+    for (const p of sq.players || []) {
+      const url = (p.no != null ? byNo[p.no] : null) || byName[normName(p.name)] || null
+      if (url) p.photo = url
+    }
+    await sleep(80)
+  }
+  const n = Object.keys(photos).length
+  log(`fifa photos: ${n} player images across ${teamsOk} teams`)
+  return {
+    updatedAt: new Date().toISOString(),
+    source: 'api.fifa.com',
+    host: 'digitalhub.fifa.com',
+    photos,
+  }
+}
+
+// stamp squad players from the static lookup only — never hits the network
+function applyPlayerPhotos(squads, lookup) {
+  const photos = lookup?.photos
+  if (!photos) return 0
+  const byTeam = {}
+  for (const entry of Object.values(photos)) {
+    if (!entry?.code || !entry.url || entry.no == null) continue
+    byTeam[entry.code] ??= { byNo: {}, byName: {} }
+    byTeam[entry.code].byNo[entry.no] = entry.url
+    const nm = normName(entry.name)
+    if (nm) byTeam[entry.code].byName[nm] = entry.url
+  }
+  let n = 0
+  for (const [code, sq] of Object.entries(squads)) {
+    const idx = byTeam[code]
+    if (!idx) continue
+    for (const p of sq.players || []) {
+      const url = (p.no != null ? idx.byNo[p.no] : null) || idx.byName[normName(p.name)] || null
+      if (url) {
+        p.photo = url
+        n++
+      }
+    }
+  }
+  return n
+}
+
 // --------------------------------------------- base-camp geocoding (Open-Meteo, cached)
 
 /** fill teams[].baseCamp.lat/lon from the camp city via Open-Meteo's free geocoder */
@@ -1399,6 +1493,7 @@ async function main() {
         if (!op) continue // newly added player: keep the fresh wiki numbers as the base
         if (op.caps != null) p.caps = op.caps // gap-fill only: a null base still takes wiki
         if (op.goals != null) p.goals = op.goals
+        if (op.photo) p.photo = op.photo // photo URLs are maintained separately, not from wiki
       }
     }
     const sizes = Object.values(squads).map((s) => s.players.length)
@@ -1498,6 +1593,21 @@ async function main() {
 
   // 8b. country flags served locally (idempotent — only fetches missing files)
   const flagCount = await downloadFlags(fifaIso, broadcasters)
+
+  // 8b2. player headshots: the default update never re-fetches FIFA image URLs — it
+  // only re-applies the static player-photos.json lookup (and preserved per-player
+  // photo fields from the previous squads.json). Pass --fetch-photos to rebuild the lookup.
+  let playerPhotos = await readJsonSafe(path.join(OUT, 'player-photos.json'))
+  if (FETCH_PHOTOS) {
+    try {
+      playerPhotos = await fetchFifaPhotos(fifaTeamIds, squads)
+    } catch (e) {
+      warn(`fifa photos: ${e.message} — keeping previous lookup`)
+    }
+  } else {
+    const n = applyPlayerPhotos(squads, playerPhotos)
+    if (n) log(`player photos: ${n} links from lookup (unchanged)`)
+  }
 
   // 8c. win/draw/loss probabilities (Elo over martj42/international_results, CC0)
   let probs = {}
@@ -1731,6 +1841,7 @@ async function main() {
   log(`wrote ${squadFiles} per-team squad files (public/data/squads/)`)
   if (broadcasters) await writeJson(path.join(OUT, 'broadcasters.json'), broadcasters)
   if (marketOdds) await writeJson(path.join(OUT, 'market-odds.json'), marketOdds)
+  if (FETCH_PHOTOS && playerPhotos) await writeJson(path.join(OUT, 'player-photos.json'), playerPhotos)
   await writeJson(path.join(OUT, 'meta.json'), {
     updatedAt: new Date().toISOString(),
     season: ID_SEASON,
