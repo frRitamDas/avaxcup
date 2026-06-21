@@ -163,6 +163,7 @@ const en: Dict = {
   probHide: 'Hide win probability',
   // ---- tournament forecast ----
   navSim: 'Forecast',
+  navAiSim: 'AI Match Simulator',
   simTitle: 'Tournament forecast',
   simSub:
     'Predict the whole World Cup by simulating it with the model probabilities: scores, tables, bracket, champion.',
@@ -359,6 +360,21 @@ const en: Dict = {
   wmo95: 'Thunderstorm',
   wmo96: 'Thunderstorm with hail',
   wmo99: 'Thunderstorm with hail',
+  // AI Match Simulator
+  aimsTitle: 'AI Match Simulator',
+  aimsSub: 'Pick any two teams and let the Elo model predict how it plays out.',
+  aimsTeamA: 'Team A',
+  aimsTeamB: 'Team B',
+  aimsSwap: 'Swap teams',
+  aimsSimulate: 'Simulate Match',
+  aimsAnalyzing: 'Analyzing probabilities…',
+  aimsDraw: "It's a draw!",
+  aimsWinner: '{team} wins!',
+  aimsDrawLabel: 'Draw',
+  aimsHistory: 'Simulation history',
+  aimsClearHistory: 'Clear history',
+  aimsNote:
+    'Powered by the same Elo rating model used in the tournament Forecast page. For entertainment only — not an official prediction.',
 }
 
 export default en

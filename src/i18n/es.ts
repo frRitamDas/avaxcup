@@ -162,6 +162,7 @@ const es: Dict = {
   probHide: 'Ocultar la probabilidad',
   // ---- tournament forecast ----
   navSim: 'Pronóstico',
+  navAiSim: 'Simulador IA',
   simTitle: 'Pronóstico del torneo',
   simSub:
     'Pronostica todo el Mundial simulándolo con las probabilidades del modelo: marcadores, tablas, cuadro y campeón.',
@@ -353,6 +354,21 @@ const es: Dict = {
   missDne: 'No participó',
   missBanned: 'Excluido',
   missNotMember: 'No miembro de la FIFA',
+  // AI Match Simulator
+  aimsTitle: 'AI Match Simulator',
+  aimsSub: 'Elige dos equipos y deja que el modelo Elo prediga cómo terminaría el partido.',
+  aimsTeamA: 'Equipo A',
+  aimsTeamB: 'Equipo B',
+  aimsSwap: 'Intercambiar equipos',
+  aimsSimulate: 'Simular Partido',
+  aimsAnalyzing: 'Analizando probabilidades…',
+  aimsDraw: '¡Empate!',
+  aimsWinner: '¡Gana {team}!',
+  aimsDrawLabel: 'Empate',
+  aimsHistory: 'Historial de simulaciones',
+  aimsClearHistory: 'Limpiar historial',
+  aimsNote:
+    'Usa el mismo modelo de calificación Elo de la página de Pronóstico del torneo. Solo con fines de entretenimiento — no es una predicción oficial.',
 }
 
 export default es
