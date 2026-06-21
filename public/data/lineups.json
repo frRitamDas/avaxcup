@@ -16305,6 +16305,12 @@
      "on": "464484",
      "minute": "",
      "period": 4
+    },
+    {
+     "off": "504502",
+     "on": "494375",
+     "minute": "64'",
+     "period": 5
     }
    ]
   },
@@ -16592,12 +16598,19 @@
      "type": 2,
      "period": 3,
      "sec": 1806
+    },
+    {
+     "player": "395321",
+     "minute": "69'",
+     "type": 2,
+     "period": 5,
+     "sec": 1386
     }
    ],
    "bookings": [],
    "substitutions": []
   },
-  "matchTime": "55'",
+  "matchTime": "69'",
   "period": 5,
   "final": false,
   "secTried": true
