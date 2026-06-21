@@ -14,6 +14,7 @@ const LINKS: { to: string; key: string; icon: IconName }[] = [
   { to: '/venues', key: 'navVenues', icon: 'stadium' },
   { to: '/watch', key: 'navWatch', icon: 'tv' },
   { to: '/stats', key: 'navStats', icon: 'chart' },
+  { to: '/polymarket', key: 'navMarket', icon: 'market' },
   { to: '/settings', key: 'navSettings', icon: 'gear' },
 ]
 

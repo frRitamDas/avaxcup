@@ -1,0 +1,326 @@
+{
+ "updatedAt": "2026-06-21T18:36:22.000Z",
+ "marketUpdatedAt": "2026-06-21T18:32:10.776468Z",
+ "title": "World Cup Winner",
+ "slug": "world-cup-winner",
+ "url": "https://polymarket.com/event/world-cup-winner",
+ "volume": 2836608092,
+ "source": "polymarket.com",
+ "champion": [
+  {
+   "code": "FRA",
+   "label": "France",
+   "price": 0.1975,
+   "change1d": 0.001,
+   "norm": 0.192
+  },
+  {
+   "code": "ESP",
+   "label": "Spain",
+   "price": 0.1425,
+   "change1d": 0.006,
+   "norm": 0.1386
+  },
+  {
+   "code": "ENG",
+   "label": "England",
+   "price": 0.1255,
+   "change1d": 0.0,
+   "norm": 0.122
+  },
+  {
+   "code": "ARG",
+   "label": "Argentina",
+   "price": 0.1175,
+   "change1d": 0.0,
+   "norm": 0.1142
+  },
+  {
+   "code": "POR",
+   "label": "Portugal",
+   "price": 0.0665,
+   "change1d": -0.005,
+   "norm": 0.0647
+  },
+  {
+   "code": "BRA",
+   "label": "Brazil",
+   "price": 0.0595,
+   "change1d": 0.0,
+   "norm": 0.0579
+  },
+  {
+   "code": "NED",
+   "label": "Netherlands",
+   "price": 0.0555,
+   "change1d": 0.0065,
+   "norm": 0.054
+  },
+  {
+   "code": "GER",
+   "label": "Germany",
+   "price": 0.0535,
+   "change1d": -0.01,
+   "norm": 0.052
+  },
+  {
+   "code": "USA",
+   "label": "USA",
+   "price": 0.0395,
+   "change1d": 0.007,
+   "norm": 0.0384
+  },
+  {
+   "code": "NOR",
+   "label": "Norway",
+   "price": 0.0235,
+   "change1d": -0.001,
+   "norm": 0.0228
+  },
+  {
+   "code": "JPN",
+   "label": "Japan",
+   "price": 0.0225,
+   "change1d": 0.01,
+   "norm": 0.0219
+  },
+  {
+   "code": "MAR",
+   "label": "Morocco",
+   "price": 0.0225,
+   "change1d": -0.003,
+   "norm": 0.0219
+  },
+  {
+   "code": "BEL",
+   "label": "Belgium",
+   "price": 0.0155,
+   "change1d": 0.0,
+   "norm": 0.0151
+  },
+  {
+   "code": "COL",
+   "label": "Colombia",
+   "price": 0.0145,
+   "change1d": -0.001,
+   "norm": 0.0141
+  },
+  {
+   "code": "MEX",
+   "label": "Mexico",
+   "price": 0.0135,
+   "change1d": 0.001,
+   "norm": 0.0131
+  },
+  {
+   "code": "SUI",
+   "label": "Switzerland",
+   "price": 0.0075,
+   "change1d": 0.001,
+   "norm": 0.0073
+  },
+  {
+   "code": "URU",
+   "label": "Uruguay",
+   "price": 0.0055,
+   "change1d": 0.0,
+   "norm": 0.0053
+  },
+  {
+   "code": "SEN",
+   "label": "Senegal",
+   "price": 0.0055,
+   "change1d": 0.0,
+   "norm": 0.0053
+  },
+  {
+   "code": "CIV",
+   "label": "Ivory Coast",
+   "price": 0.0045,
+   "change1d": 0.0,
+   "norm": 0.0044
+  },
+  {
+   "code": "CRO",
+   "label": "Croatia",
+   "price": 0.0045,
+   "change1d": -0.002,
+   "norm": 0.0044
+  },
+  {
+   "code": "KOR",
+   "label": "South Korea",
+   "price": 0.0035,
+   "change1d": 0.0,
+   "norm": 0.0034
+  },
+  {
+   "code": "CAN",
+   "label": "Canada",
+   "price": 0.0035,
+   "change1d": 0.0,
+   "norm": 0.0034
+  },
+  {
+   "code": "AUT",
+   "label": "Austria",
+   "price": 0.0035,
+   "change1d": 0.0,
+   "norm": 0.0034
+  },
+  {
+   "code": "AUS",
+   "label": "Australia",
+   "price": 0.0025,
+   "change1d": -0.001,
+   "norm": 0.0024
+  },
+  {
+   "code": "EGY",
+   "label": "Egypt",
+   "price": 0.0025,
+   "change1d": 0.0,
+   "norm": 0.0024
+  },
+  {
+   "code": "SWE",
+   "label": "Sweden",
+   "price": 0.0025,
+   "change1d": 0.0,
+   "norm": 0.0024
+  },
+  {
+   "code": "PAR",
+   "label": "Paraguay",
+   "price": 0.0015,
+   "change1d": 0.0,
+   "norm": 0.0015
+  },
+  {
+   "code": "SCO",
+   "label": "Scotland",
+   "price": 0.0015,
+   "change1d": 0.0,
+   "norm": 0.0015
+  },
+  {
+   "code": "ECU",
+   "label": "Ecuador",
+   "price": 0.0015,
+   "change1d": -0.002,
+   "norm": 0.0015
+  },
+  {
+   "code": "COD",
+   "label": "Congo DR",
+   "price": 0.0015,
+   "change1d": 0.0,
+   "norm": 0.0015
+  },
+  {
+   "code": "NZL",
+   "label": "New Zealand",
+   "price": 0.0005,
+   "change1d": 0.0,
+   "norm": 0.0005
+  },
+  {
+   "code": "JOR",
+   "label": "Jordan",
+   "price": 0.0005,
+   "change1d": 0.0,
+   "norm": 0.0005
+  },
+  {
+   "code": "CUW",
+   "label": "Cura\u00e7ao",
+   "price": 0.0005,
+   "change1d": 0.0,
+   "norm": 0.0005
+  },
+  {
+   "code": "IRN",
+   "label": "Iran",
+   "price": 0.0005,
+   "change1d": 0.0,
+   "norm": 0.0005
+  },
+  {
+   "code": "GHA",
+   "label": "Ghana",
+   "price": 0.0005,
+   "change1d": 0.0,
+   "norm": 0.0005
+  },
+  {
+   "code": "ALG",
+   "label": "Algeria",
+   "price": 0.0005,
+   "change1d": 0.0,
+   "norm": 0.0005
+  },
+  {
+   "code": "BIH",
+   "label": "Bosnia-Herzegovina",
+   "price": 0.0005,
+   "change1d": 0.0,
+   "norm": 0.0005
+  },
+  {
+   "code": "UZB",
+   "label": "Uzbekistan",
+   "price": 0.0005,
+   "change1d": 0.0,
+   "norm": 0.0005
+  },
+  {
+   "code": "PAN",
+   "label": "Panama",
+   "price": 0.0005,
+   "change1d": 0.0,
+   "norm": 0.0005
+  },
+  {
+   "code": "IRQ",
+   "label": "Iraq",
+   "price": 0.0005,
+   "change1d": 0.0,
+   "norm": 0.0005
+  },
+  {
+   "code": "RSA",
+   "label": "South Africa",
+   "price": 0.0005,
+   "change1d": 0.0,
+   "norm": 0.0005
+  },
+  {
+   "code": "CPV",
+   "label": "Cape Verde",
+   "price": 0.0005,
+   "change1d": 0.0,
+   "norm": 0.0005
+  },
+  {
+   "code": "CZE",
+   "label": "Czechia",
+   "price": 0.0005,
+   "change1d": 0.0,
+   "norm": 0.0005
+  },
+  {
+   "code": "QAT",
+   "label": "Qatar",
+   "price": 0.0005,
+   "change1d": 0.0,
+   "norm": 0.0005
+  },
+  {
+   "code": "KSA",
+   "label": "Saudi Arabia",
+   "price": 0.0005,
+   "change1d": 0.0,
+   "norm": 0.0005
+  }
+ ]
+}

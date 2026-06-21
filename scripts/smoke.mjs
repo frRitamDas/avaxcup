@@ -22,6 +22,7 @@ const ROUTES = [
   ['watch', '#/watch'],
   ['stats', '#/stats'],
   ['forecast', '#/forecast'],
+  ['polymarket', '#/polymarket'],
   ['settings', '#/settings'],
   ['more', '#/more'],
   ['match-1', '#/match/400021443'],

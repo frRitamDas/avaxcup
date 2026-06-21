@@ -19,6 +19,7 @@ const NAV: { to: string; key: string; icon: IconName }[] = [
   { to: '/watch', key: 'navWatch', icon: 'tv' },
   { to: '/stats', key: 'navStats', icon: 'chart' },
   { to: '/forecast', key: 'navSim', icon: 'target' },
+  { to: '/polymarket', key: 'navMarket', icon: 'market' },
   { to: '/settings', key: 'navSettings', icon: 'gear' },
 ]
 

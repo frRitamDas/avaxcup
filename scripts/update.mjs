@@ -1243,6 +1243,78 @@ async function fetchWeather(matches, venues) {
   return out
 }
 
+// ---------------------------------------------------------------- prediction market
+
+// Polymarket "World Cup Winner" event via the public Gamma API (no key, no auth).
+// This is an *independent*, market-implied forecast shown next to the Elo model —
+// each team has its own Yes/No market; the Yes price is the implied title chance.
+const PM_EVENT_SLUG = 'world-cup-winner'
+// Polymarket's English team labels that don't match our teams.json English names
+const PM_ALIAS = {
+  'ivory coast': 'CIV',
+  'south korea': 'KOR',
+  iran: 'IRN',
+  'bosnia-herzegovina': 'BIH',
+  'cape verde': 'CPV',
+}
+
+async function fetchMarketOdds(teams) {
+  const ev = (await fetchJson(`https://gamma-api.polymarket.com/events?slug=${PM_EVENT_SLUG}`))?.[0]
+  if (!ev || !Array.isArray(ev.markets)) throw new Error('no event/markets in response')
+
+  // map a Polymarket team label -> our FIFA code (English name, then alias table)
+  const byName = {}
+  for (const [code, t] of Object.entries(teams)) {
+    if (t?.name?.en) byName[t.name.en.toLowerCase()] = code
+  }
+  const codeFor = (label) => {
+    const k = String(label || '').toLowerCase()
+    return byName[k] ?? PM_ALIAS[k] ?? null
+  }
+
+  const outcomes = []
+  let unmatched = 0
+  for (const m of ev.markets) {
+    if (m.closed || !m.groupItemTitle) continue
+    let prices
+    try {
+      prices = JSON.parse(m.outcomePrices) // e.g. ["0.1425","0.8575"] (Yes, No)
+    } catch {
+      continue
+    }
+    const yes = Number(prices?.[0])
+    if (!Number.isFinite(yes)) continue
+    const code = codeFor(m.groupItemTitle)
+    // skip "Team AX" play-off placeholders and the "Other" bucket — no real team
+    if (!code || !teams[code]) {
+      unmatched++
+      continue
+    }
+    outcomes.push({
+      code,
+      label: String(m.groupItemTitle),
+      price: +yes.toFixed(4),
+      change1d: +(Number(m.oneDayPriceChange) || 0).toFixed(4),
+    })
+  }
+  outcomes.sort((a, b) => b.price - a.price)
+  // normalize away the book's overround so the values read as probabilities (sum 100%)
+  const sum = outcomes.reduce((s, o) => s + o.price, 0) || 1
+  for (const o of outcomes) o.norm = +(o.price / sum).toFixed(4)
+  if (unmatched) log(`market odds: ${unmatched} non-team outcomes skipped (placeholders/Other)`)
+
+  return {
+    updatedAt: new Date().toISOString(),
+    marketUpdatedAt: ev.updatedAt ?? null,
+    title: (ev.title || 'World Cup Winner').trim(),
+    slug: ev.slug || PM_EVENT_SLUG,
+    url: `https://polymarket.com/event/${ev.slug || PM_EVENT_SLUG}`,
+    volume: Math.round(Number(ev.volume) || 0),
+    source: 'polymarket.com',
+    champion: outcomes,
+  }
+}
+
 // ---------------------------------------------------------------- main
 
 async function main() {
@@ -1618,6 +1690,16 @@ async function main() {
     probs = prevProbs
   }
 
+  // 8d. prediction-market odds (Polymarket public API) — independent of the model,
+  // optional: a failure keeps the previous file and never blocks the rest
+  let marketOdds = await readJsonSafe(path.join(OUT, 'market-odds.json'))
+  try {
+    marketOdds = await fetchMarketOdds(teams)
+    log(`market odds: ${marketOdds.champion.length} teams (Polymarket)`)
+  } catch (e) {
+    warn(`market odds: ${e.message} — keeping previous file`)
+  }
+
   // 9. write everything
   await writeJson(path.join(OUT, 'matches.json'), { matches })
   await writeJson(path.join(OUT, 'teams.json'), { teams })
@@ -1648,6 +1730,7 @@ async function main() {
   }
   log(`wrote ${squadFiles} per-team squad files (public/data/squads/)`)
   if (broadcasters) await writeJson(path.join(OUT, 'broadcasters.json'), broadcasters)
+  if (marketOdds) await writeJson(path.join(OUT, 'market-odds.json'), marketOdds)
   await writeJson(path.join(OUT, 'meta.json'), {
     updatedAt: new Date().toISOString(),
     season: ID_SEASON,
@@ -1666,6 +1749,7 @@ async function main() {
       'en.wikipedia.org',
       'open-meteo.com',
       'github.com/martj42/international_results',
+      'polymarket.com',
     ],
   })
   log(`done. ${errors.length} warnings`)

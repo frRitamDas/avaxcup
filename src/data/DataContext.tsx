@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useRef, useState, useMemo } from 'react'
 import type { ReactNode } from 'react'
-import type { AppData, Squads, WcHistory } from '../types'
+import type { AppData, MarketOdds, Squads, WcHistory } from '../types'
 import type { SimModel } from '../sim/engine'
 import { withResolvedSides } from '../utils/bracketResolve'
 
@@ -15,6 +15,9 @@ interface DataCtx {
   /** frozen World Cup history + qualification, loaded lazily on first use */
   wcHistory: WcHistory | null
   loadWcHistory: () => void
+  /** Polymarket prediction-market odds, loaded lazily on first use */
+  marketOdds: MarketOdds | null
+  loadMarketOdds: () => void
 }
 
 const Ctx = createContext<DataCtx | null>(null)
@@ -49,9 +52,11 @@ export function DataProvider({ children }: { children: ReactNode }) {
   const [squads, setSquads] = useState<Squads | null>(null)
   const [simModel, setSimModel] = useState<SimModel | null>(null)
   const [wcHistory, setWcHistory] = useState<WcHistory | null>(null)
+  const [marketOdds, setMarketOdds] = useState<MarketOdds | null>(null)
   const simRequested = useRef(false)
   const squadsRequested = useRef(false)
   const wcHistoryRequested = useRef(false)
+  const marketOddsRequested = useRef(false)
   const dataRef = useRef<AppData | null>(null)
   const refreshing = useRef(false)
 
@@ -197,6 +202,17 @@ export function DataProvider({ children }: { children: ReactNode }) {
       })
   }
 
+  const loadMarketOdds = () => {
+    if (marketOddsRequested.current) return
+    marketOddsRequested.current = true
+    getJson<MarketOdds>('market-odds.json')
+      .then(setMarketOdds)
+      .catch(() => {
+        // transient failure / file not yet generated: let a later visit retry
+        marketOddsRequested.current = false
+      })
+  }
+
   // knockout slots that are mathematically decided render as real teams everywhere
   const dataResolved = useMemo(
     () => (data ? { ...data, matches: withResolvedSides(data.matches, data.standings) } : data),
@@ -214,6 +230,8 @@ export function DataProvider({ children }: { children: ReactNode }) {
         loadSimModel,
         wcHistory,
         loadWcHistory,
+        marketOdds,
+        loadMarketOdds,
       }}
     >
       {children}

@@ -268,6 +268,27 @@ export interface Stats {
   fairPlay?: { group: Record<string, number>; all: Record<string, number> }
 }
 
+// ---- prediction-market odds (Polymarket, via scripts/update.mjs) ----
+
+export interface MarketOutcome {
+  code: string // FIFA team code
+  label: string // Polymarket's own label (English)
+  price: number // raw Yes-share price = implied probability incl. book overround (0..1)
+  norm: number // price normalized so all outcomes sum to 1
+  change1d: number // 24h price change (signed, in probability points)
+}
+
+export interface MarketOdds {
+  updatedAt: string // when our pipeline fetched it (UTC ISO)
+  marketUpdatedAt: string | null // Polymarket's own last-update timestamp
+  title: string
+  slug: string
+  url: string
+  volume: number // total USD traded
+  source: string
+  champion: MarketOutcome[] // sorted by price, descending
+}
+
 export interface Meta {
   updatedAt: string
   season: string

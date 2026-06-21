@@ -1,6 +1,6 @@
 # [2026 World Cup Open Source Companion ⚽](https://26worldcup.github.io)
 
-Clean and complete 2026 FIFA World Cup companion: schedule, groups, bracket, squads, venues, weather, where to watch, match win **probabilities** and tournament **forecast**, in 23 languages.
+Clean and complete 2026 FIFA World Cup companion: schedule, groups, bracket, squads, venues, weather, where to watch, match win **probabilities**, tournament **forecast**, and live prediction-**market** odds, in 23 languages.
 
 👉 **[Click me to use 2026 World Cup Open Source Companion now!](https://26worldcup.github.io)** ⚽ ([26worldcup.github.io](https://26worldcup.github.io))
 
@@ -39,6 +39,7 @@ README in [français](README.fr.md) · [中文](README.zh.md)
 
 - 👟 **Golden-boot table** and tournament stats, updated throughout the competition
 - 🎲 **Match probabilities & tournament forecast**: every fixture gets a win/draw/loss **probability** from an Elo model replayed over 49,000 historical internationals blended with the official FIFA ranking, and the **forecast** page lets you **simulate** the whole tournament (group tables, knockout bracket, extra time, penalty shoot-outs) 1 to 10,000 times, starting from now, the opening match, a date, or any match number, then shows not just each team's title odds but a full **outcome table**: how every team finishes its group, the round it bows out in, and its final placing, all the way to the trophy, like a fun **prediction** machine
+- 💹 **Prediction market**: a **Market** tab with live title odds from [Polymarket](https://polymarket.com), the crowd's real-money bet on who lifts the trophy — each team's market-implied chance (normalized to 100%) shown right next to the model's own forecast for an at-a-glance market-vs-model comparison (informational only, not betting advice; availability varies by country)
 
 ### 🌍 Languages
 
@@ -71,6 +72,7 @@ All data comes from free, authoritative sources, with no API keys anywhere:
 | Wikipedia | official 26-player squads (numbers, caps, goals, clubs, coaches) |
 | Open-Meteo | hourly stadium weather forecasts and base-camp geocoding |
 | martj42/international_results (CC0) | historical results feeding the Elo win-probability model |
+| Polymarket public API | live market-implied title odds shown on the **Market** tab |
 | Hand-curated files | venues, broadcasters, base camps, climate normals, team colours |
 
 **Automatic updates** (GitHub Actions, included in this repo):
@@ -203,4 +205,4 @@ src/                  application code (pages, components, i18n, settings)
 
 ## 📄 License
 
-Code and curated data: [MIT](LICENSE.md). Detailed third-party data and image licensing: [COPYRIGHT](COPYRIGHT.md). Data courtesy of FIFA's public API, Wikipedia, and Open-Meteo; verify broadcast rights with local listings.
+Code and curated data: [MIT](LICENSE.md). Detailed third-party data and image licensing: [COPYRIGHT](COPYRIGHT.md). Data courtesy of FIFA's public API, Wikipedia, Open-Meteo, and Polymarket; verify broadcast rights with local listings. Prediction-market odds are shown for information only and are not betting advice.
