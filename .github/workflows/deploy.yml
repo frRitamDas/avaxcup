@@ -1,10 +1,11 @@
-# Builds and publishes the site to GitHub Pages on every push to main.
+# Builds and publishes the site to GitHub Pages on every push to feat/player-photos.
 # (Repo Settings → Pages → Source must be set to "GitHub Actions".)
+# update-data.yml is unchanged — scheduled data refresh still targets main only.
 name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches: [feat/player-photos]
     # docs and pipeline-only changes don't alter the built site — skip the deploy
     # (a push deploys unless EVERY changed file matches one of these)
     paths-ignore:
@@ -34,6 +35,8 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: feat/player-photos
       - uses: oven-sh/setup-bun@v2
         with:
           bun-version: '1.3.10'
