@@ -154,7 +154,7 @@
    "photo": "https://digitalhub.fifa.com/transform/704d2d9d-1b5f-4296-87f4-b7b591a58116/OLIVERA-Mathias_402893",
    "wcApps": 2,
    "wcGoals": 0,
-   "wcYellow": 0,
+   "wcYellow": 1,
    "wcRed": 0
   },
   {
@@ -247,7 +247,7 @@
    "captain": false,
    "wiki": "https://en.wikipedia.org/wiki/Nicol%C3%A1s_de_la_Cruz",
    "photo": "https://digitalhub.fifa.com/transform/7694c9e6-d4f9-4f60-8173-5a3a79bcaaa2/DE-LA-CRUZ-Nicolas_402898",
-   "wcApps": 1,
+   "wcApps": 2,
    "wcGoals": 0,
    "wcYellow": 0,
    "wcRed": 0
@@ -305,7 +305,7 @@
    "wiki": "https://en.wikipedia.org/wiki/Agust%C3%ADn_Canobbio",
    "photo": "https://digitalhub.fifa.com/transform/5985fa52-e467-4c1c-95f2-355bd1cb3925/CANOBBIO-Agustin_402876",
    "wcApps": 2,
-   "wcGoals": 0,
+   "wcGoals": 1,
    "wcYellow": 0,
    "wcRed": 0
   },
@@ -343,7 +343,7 @@
    "wiki": "https://en.wikipedia.org/wiki/Maximiliano_Ara%C3%BAjo",
    "photo": "https://digitalhub.fifa.com/transform/f1a7af03-ada1-4642-927c-5fe06844c89c/ARAUJO-Maxi_419100",
    "wcApps": 2,
-   "wcGoals": 1,
+   "wcGoals": 2,
    "wcYellow": 0,
    "wcRed": 0
   },
@@ -418,7 +418,7 @@
    "captain": false,
    "wiki": "https://en.wikipedia.org/wiki/Darwin_N%C3%BA%C3%B1ez",
    "photo": "https://digitalhub.fifa.com/transform/078805a6-5fbe-44f3-a58c-ed3837ca5665/NUNEZ-Darwin_419126",
-   "wcApps": 1,
+   "wcApps": 2,
    "wcGoals": 0,
    "wcYellow": 0,
    "wcRed": 0
@@ -456,7 +456,7 @@
    "captain": false,
    "wiki": "https://en.wikipedia.org/wiki/Brian_Rodr%C3%ADguez",
    "photo": "https://digitalhub.fifa.com/transform/c6c94193-1372-4e11-94b5-35bcdd575e62/RODRIGUEZ-Brian_419132",
-   "wcApps": 1,
+   "wcApps": 2,
    "wcGoals": 0,
    "wcYellow": 0,
    "wcRed": 0
