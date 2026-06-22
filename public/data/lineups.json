@@ -19002,6 +19002,12 @@
      "minute": "20'",
      "card": 1,
      "period": 3
+    },
+    {
+     "player": "390196",
+     "minute": "34'",
+     "card": 1,
+     "period": 3
     }
    ],
    "substitutions": []
@@ -19309,7 +19315,7 @@
    ],
    "substitutions": []
   },
-  "matchTime": "20'",
+  "matchTime": "34'",
   "period": 3,
   "final": false,
   "secTried": true
