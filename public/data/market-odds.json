@@ -1,10 +1,10 @@
 {
- "updatedAt": "2026-06-22T00:36:11.617Z",
- "marketUpdatedAt": "2026-06-22T00:32:17.971966Z",
+ "updatedAt": "2026-06-22T02:35:51.077Z",
+ "marketUpdatedAt": "2026-06-22T02:32:22.165481Z",
  "title": "World Cup Winner",
  "slug": "world-cup-winner",
  "url": "https://polymarket.com/event/world-cup-winner",
- "volume": 2875857157,
+ "volume": 2891721636,
  "source": "polymarket.com",
  "champion": [
   {
@@ -53,14 +53,14 @@
    "code": "NED",
    "label": "Netherlands",
    "price": 0.0545,
-   "change1d": 0,
+   "change1d": -0.0025,
    "norm": 0.0543
   },
   {
    "code": "GER",
    "label": "Germany",
    "price": 0.0535,
-   "change1d": -0.003,
+   "change1d": 0,
    "norm": 0.0533
   },
   {
@@ -108,9 +108,9 @@
   {
    "code": "BEL",
    "label": "Belgium",
-   "price": 0.0115,
-   "change1d": -0.004,
-   "norm": 0.0115
+   "price": 0.0105,
+   "change1d": -0.005,
+   "norm": 0.0105
   },
   {
    "code": "SUI",
@@ -172,7 +172,7 @@
    "code": "EGY",
    "label": "Egypt",
    "price": 0.0025,
-   "change1d": 0.001,
+   "change1d": 0,
    "norm": 0.0025
   },
   {
@@ -207,7 +207,7 @@
    "code": "ECU",
    "label": "Ecuador",
    "price": 0.0015,
-   "change1d": -0.002,
+   "change1d": 0,
    "norm": 0.0015
   },
   {
@@ -215,6 +215,13 @@
    "label": "Congo DR",
    "price": 0.0015,
    "change1d": 0,
+   "norm": 0.0015
+  },
+  {
+   "code": "CPV",
+   "label": "Cape Verde",
+   "price": 0.0015,
+   "change1d": 0.001,
    "norm": 0.0015
   },
   {
@@ -290,13 +297,6 @@
   {
    "code": "RSA",
    "label": "South Africa",
-   "price": 0.0005,
-   "change1d": 0,
-   "norm": 0.0005
-  },
-  {
-   "code": "CPV",
-   "label": "Cape Verde",
    "price": 0.0005,
    "change1d": 0,
    "norm": 0.0005
