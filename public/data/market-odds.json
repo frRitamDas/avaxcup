@@ -1,10 +1,10 @@
 {
- "updatedAt": "2026-06-22T02:51:57.867Z",
- "marketUpdatedAt": "2026-06-22T02:47:23.230941Z",
+ "updatedAt": "2026-06-22T03:05:39.279Z",
+ "marketUpdatedAt": "2026-06-22T03:02:23.228071Z",
  "title": "World Cup Winner",
  "slug": "world-cup-winner",
  "url": "https://polymarket.com/event/world-cup-winner",
- "volume": 2892173838,
+ "volume": 2892762291,
  "source": "polymarket.com",
  "champion": [
   {
@@ -81,7 +81,7 @@
    "code": "JPN",
    "label": "Japan",
    "price": 0.0215,
-   "change1d": 0.008,
+   "change1d": 0.006,
    "norm": 0.0214
   },
   {
