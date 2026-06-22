@@ -1,10 +1,10 @@
 {
- "updatedAt": "2026-06-22T02:35:51.077Z",
- "marketUpdatedAt": "2026-06-22T02:32:22.165481Z",
+ "updatedAt": "2026-06-22T02:51:57.867Z",
+ "marketUpdatedAt": "2026-06-22T02:47:23.230941Z",
  "title": "World Cup Winner",
  "slug": "world-cup-winner",
  "url": "https://polymarket.com/event/world-cup-winner",
- "volume": 2891721636,
+ "volume": 2892173838,
  "source": "polymarket.com",
  "champion": [
   {
@@ -53,7 +53,7 @@
    "code": "NED",
    "label": "Netherlands",
    "price": 0.0545,
-   "change1d": -0.0025,
+   "change1d": -0.004,
    "norm": 0.0543
   },
   {
@@ -74,7 +74,7 @@
    "code": "MAR",
    "label": "Morocco",
    "price": 0.0225,
-   "change1d": 0,
+   "change1d": 0.001,
    "norm": 0.0224
   },
   {
