@@ -1,10 +1,10 @@
 {
- "updatedAt": "2026-06-22T00:49:53.618Z",
- "marketUpdatedAt": "2026-06-22T00:47:20.432522Z",
+ "updatedAt": "2026-06-22T00:36:11.617Z",
+ "marketUpdatedAt": "2026-06-22T00:32:17.971966Z",
  "title": "World Cup Winner",
  "slug": "world-cup-winner",
  "url": "https://polymarket.com/event/world-cup-winner",
- "volume": 2877464539,
+ "volume": 2875857157,
  "source": "polymarket.com",
  "champion": [
   {
@@ -12,14 +12,14 @@
    "label": "France",
    "price": 0.1975,
    "change1d": 0,
-   "norm": 0.1969
+   "norm": 0.1968
   },
   {
    "code": "ESP",
    "label": "Spain",
    "price": 0.1385,
    "change1d": 0.002,
-   "norm": 0.1381
+   "norm": 0.138
   },
   {
    "code": "ENG",
@@ -60,7 +60,7 @@
    "code": "GER",
    "label": "Germany",
    "price": 0.0535,
-   "change1d": 0,
+   "change1d": -0.003,
    "norm": 0.0533
   },
   {
@@ -96,7 +96,7 @@
    "label": "Colombia",
    "price": 0.0145,
    "change1d": 0,
-   "norm": 0.0145
+   "norm": 0.0144
   },
   {
    "code": "MEX",
@@ -108,9 +108,9 @@
   {
    "code": "BEL",
    "label": "Belgium",
-   "price": 0.011,
-   "change1d": -0.0045,
-   "norm": 0.011
+   "price": 0.0115,
+   "change1d": -0.004,
+   "norm": 0.0115
   },
   {
    "code": "SUI",

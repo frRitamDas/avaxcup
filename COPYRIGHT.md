@@ -23,6 +23,7 @@ The compilations are released under MIT. They consist of factual information col
 
 - `matches.json`, `teams.json`, `standings.json`, `lineups.json`, `stats.json`, `venues.json` (names/schedule parts) — factual sports data retrieved from FIFA's publicly accessible API (api.fifa.com): fixtures, scores, officials, localized team/stadium names, world ranking. Facts as such are not copyrightable; the compilation here is our own. FIFA trademarks remain FIFA's property. If you redistribute this app publicly, review FIFA's terms of service yourself.
 - `squads.json`, `squads/*.json` — squad facts (player names, shirt numbers, positions, birth dates, caps, goals, clubs, coaches) extracted from the Wikipedia article ["2026 FIFA World Cup squads"](https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_squads). Wikipedia article text is CC BY-SA 4.0; only uncopyrightable facts are extracted (no prose is reproduced). Attribution is nevertheless given here.
+- `player-photos.json` — a lookup of **official FIFA player headshot URLs** (`digitalhub.fifa.com`), retrieved from FIFA's public squad API. Only the URLs are stored (no image files are downloaded or redistributed); the app hot-links to FIFA's own image host at display time. The photographs remain FIFA's property — this project claims no rights to them. If you redistribute this app publicly, review FIFA's terms of service yourself.
 - `probs.json` — win/draw/loss probabilities computed by our own Elo model over the [martj42/international_results](https://github.com/martj42/international_results) dataset (CC0 public domain). The model and output are MIT.
 - `weather.json` — weather forecast data from [Open-Meteo](https://open-meteo.com), licensed CC BY 4.0. Attribution: "Weather data by Open-Meteo.com".
 - `broadcasters.json` — compiled from public rights announcements; see embedded source URLs. Translations are original to this project (MIT).
@@ -50,6 +51,7 @@ The compilations are released under MIT. They consist of factual information col
 | Source | License | Used for |
 |---|---|---|
 | FIFA public API (api.fifa.com) | facts; FIFA™ marks remain FIFA's | match and ranking facts |
+| FIFA player headshots (digitalhub.fifa.com) | FIFA's property; hot-linked, not redistributed | official squad photos |
 | Wikipedia | CC BY-SA 4.0 (text) | squad facts source |
 | Open-Meteo | CC BY 4.0 | weather forecasts and geocoding |
 | Natural Earth | public domain | map geometry |

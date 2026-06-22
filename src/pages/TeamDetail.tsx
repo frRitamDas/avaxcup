@@ -84,6 +84,44 @@ function WikiIcon({ url }: { url: string }) {
   )
 }
 
+/** up-to-two-letter initials for the photo fallback */
+function initials(name: string): string {
+  const parts = name.trim().split(/\s+/).filter(Boolean)
+  if (parts.length === 0) return '?'
+  const first = parts[0][0]
+  const last = parts.length > 1 ? parts[parts.length - 1][0] : ''
+  return (first + last).toUpperCase()
+}
+
+// FIFA's digitalhub images take on-the-fly transform params; square crop at 320px
+function fifaPhotoUrl(base: string): string {
+  return `${base}?io=transform:fill,aspectratio:1x1,width:320,gravity:top&quality=75`
+}
+
+/** circular official FIFA player headshot; falls back to initials when there is no
+ *  photo or the image fails to load */
+function PlayerAvatar({ p }: { p: SquadPlayer }) {
+  const src = p.photo ? fifaPhotoUrl(p.photo) : null
+  const [failed, setFailed] = useState(false)
+  if (src && !failed) {
+    return (
+      <img
+        className="td-avatar"
+        src={src}
+        alt=""
+        loading="lazy"
+        decoding="async"
+        onError={() => setFailed(true)}
+      />
+    )
+  }
+  return (
+    <span className="td-avatar td-avatar-ph" aria-hidden="true">
+      {initials(p.name)}
+    </span>
+  )
+}
+
 function PlayerCard({ p }: { p: SquadPlayer }) {
   const { t } = useI18n()
   const clubIso = fifaToIso2(p.clubNat)
@@ -111,61 +149,70 @@ function PlayerCard({ p }: { p: SquadPlayer }) {
 
   return (
     <div className="td-player" id={p.no !== null ? `sq-p-${p.no}` : undefined}>
-      {p.no !== null && <span className="td-no tnum">{p.no}</span>}
-      <div className="td-p-name">
-        <span>{p.name}</span>
-        {p.captain && (
-          <span className="td-cap" title={t('captain')}>
-            C
-          </span>
-        )}
+      <div className="td-p-body">
+        <div className="td-p-name">
+          <span className="clip">{p.name}</span>
+          {p.no !== null && <span className="td-no tnum">{p.no}</span>}
+          {p.captain && (
+            <span className="td-cap" title={t('captain')}>
+              C
+            </span>
+          )}
+        </div>
+        <div className="td-p-rows">
+          {age !== null && (
+            <div className="td-p-row td-p-age">
+              <span title={t('age')}>{t('ageN', { n: age })}</span>
+            </div>
+          )}
+          {showStats && (
+            <div className="td-p-row td-p-stats">
+              {statSeg(p.wcApps ?? 0, p.wcGoals ?? 0, t('appsWc'), t('goalsWc'))}
+              <span className="sep">·</span>
+              {statSeg(
+                (p.caps ?? 0) + (p.wcApps ?? 0),
+                (p.goals ?? 0) + (p.wcGoals ?? 0),
+                t('appsCareer'),
+                t('goalsCareer'),
+              )}
+            </div>
+          )}
+          {((p.wcYellow ?? 0) > 0 || (p.wcRed ?? 0) > 0) && (
+            <div className="td-p-row td-p-cards">
+              {(p.wcYellow ?? 0) > 0 && (
+                <span title={t('statYellowCards')}>
+                  🟨 <span className="tnum">{p.wcYellow}</span>
+                </span>
+              )}
+              {(p.wcYellow ?? 0) > 0 && (p.wcRed ?? 0) > 0 && <span className="sep">·</span>}
+              {(p.wcRed ?? 0) > 0 && (
+                <span title={t('statRedCards')}>
+                  🟥 <span className="tnum">{p.wcRed}</span>
+                </span>
+              )}
+            </div>
+          )}
+          {(p.club || p.wiki) && (
+            <div className="td-p-row td-p-club" title={p.club ? t('club') : undefined}>
+              {p.club && (
+                <>
+                  {clubIso && <Flag iso2={clubIso} size={16} />}
+                  {clubUrl ? (
+                    <a className="td-wiki clip" href={clubUrl} target="_blank" rel="noopener noreferrer">
+                      {p.club}
+                    </a>
+                  ) : (
+                    <span className="clip">{p.club}</span>
+                  )}
+                </>
+              )}
+              {p.wiki && <WikiIcon url={p.wiki} />}
+            </div>
+          )}
+        </div>
       </div>
-      <div className="td-p-rows">
-        {(age !== null || p.wiki) && (
-          <div className="td-p-row td-p-age">
-            {age !== null && <span title={t('age')}>{t('ageN', { n: age })}</span>}
-            {p.wiki && <WikiIcon url={p.wiki} />}
-          </div>
-        )}
-        {showStats && (
-          <div className="td-p-row td-p-stats">
-            {statSeg(p.wcApps ?? 0, p.wcGoals ?? 0, t('appsWc'), t('goalsWc'))}
-            <span className="sep">·</span>
-            {statSeg(
-              (p.caps ?? 0) + (p.wcApps ?? 0),
-              (p.goals ?? 0) + (p.wcGoals ?? 0),
-              t('appsCareer'),
-              t('goalsCareer'),
-            )}
-          </div>
-        )}
-        {((p.wcYellow ?? 0) > 0 || (p.wcRed ?? 0) > 0) && (
-          <div className="td-p-row td-p-cards">
-            {(p.wcYellow ?? 0) > 0 && (
-              <span title={t('statYellowCards')}>
-                🟨 <span className="tnum">{p.wcYellow}</span>
-              </span>
-            )}
-            {(p.wcYellow ?? 0) > 0 && (p.wcRed ?? 0) > 0 && <span className="sep">·</span>}
-            {(p.wcRed ?? 0) > 0 && (
-              <span title={t('statRedCards')}>
-                🟥 <span className="tnum">{p.wcRed}</span>
-              </span>
-            )}
-          </div>
-        )}
-        {p.club && (
-          <div className="td-p-row" title={t('club')}>
-            {clubIso && <Flag iso2={clubIso} size={16} />}
-            {clubUrl ? (
-              <a className="td-wiki clip" href={clubUrl} target="_blank" rel="noopener noreferrer">
-                {p.club}
-              </a>
-            ) : (
-              <span className="clip">{p.club}</span>
-            )}
-          </div>
-        )}
+      <div className="td-p-aside">
+        <PlayerAvatar p={p} />
       </div>
     </div>
   )
