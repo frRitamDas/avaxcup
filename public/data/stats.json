@@ -241,6 +241,14 @@
    "ownGoals": 0
   },
   {
+   "id": "405877",
+   "name": "Amine GOUIRI",
+   "code": "ALG",
+   "no": 9,
+   "goals": 1,
+   "ownGoals": 0
+  },
+  {
    "id": "441137",
    "name": "Anthony ELANGA",
    "code": "SWE",
@@ -309,14 +317,6 @@
    "name": "Ermin MAHMIC",
    "code": "BIH",
    "no": 26,
-   "goals": 1,
-   "ownGoals": 0
-  },
-  {
-   "id": "492363",
-   "name": "Felix NMECHA",
-   "code": "GER",
-   "no": 23,
    "goals": 1,
    "ownGoals": 0
   }
