@@ -4679,8 +4679,8 @@
    "bookings": [],
    "substitutions": []
   },
-  "matchTime": "0'",
-  "period": 0,
+  "matchTime": "3'",
+  "period": 3,
   "final": false,
   "secTried": true
  },
@@ -6670,6 +6670,28 @@
    "bookings": [],
    "substitutions": []
   },
+  "matchTime": "3'",
+  "period": 3,
+  "final": false,
+  "secTried": true
+ },
+ "400021452": {
+  "home": {
+   "tactics": null,
+   "xi": [],
+   "subs": [],
+   "goals": [],
+   "bookings": [],
+   "substitutions": []
+  },
+  "away": {
+   "tactics": null,
+   "xi": [],
+   "subs": [],
+   "goals": [],
+   "bookings": [],
+   "substitutions": []
+  },
   "matchTime": "0'",
   "period": 0,
   "final": false,
@@ -8031,6 +8053,28 @@
   "matchTime": "97'",
   "period": 10,
   "final": true,
+  "secTried": true
+ },
+ "400021455": {
+  "home": {
+   "tactics": null,
+   "xi": [],
+   "subs": [],
+   "goals": [],
+   "bookings": [],
+   "substitutions": []
+  },
+  "away": {
+   "tactics": null,
+   "xi": [],
+   "subs": [],
+   "goals": [],
+   "bookings": [],
+   "substitutions": []
+  },
+  "matchTime": "0'",
+  "period": 0,
+  "final": false,
   "secTried": true
  },
  "400021456": {
