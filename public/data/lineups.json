@@ -50245,11 +50245,17 @@
      "on": "495046",
      "minute": "57'",
      "period": 5
+    },
+    {
+     "off": "369761",
+     "on": "486875",
+     "minute": "",
+     "period": 17
     }
    ]
   },
-  "matchTime": "90'+3'",
-  "period": 5,
+  "matchTime": "97'",
+  "period": 7,
   "final": false,
   "secTried": true
  },
