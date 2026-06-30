@@ -6107,7 +6107,11 @@
     "score": null,
     "pen": null
    },
-   "away": null,
+   "away": {
+    "code": "NOR",
+    "score": null,
+    "pen": null
+   },
    "phA": "W76",
    "phB": "W78",
    "winner": null,
