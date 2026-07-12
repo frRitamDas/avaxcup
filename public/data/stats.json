@@ -273,6 +273,14 @@
    "ownGoals": 0
   },
   {
+   "id": "448114",
+   "name": "Dan NDOYE",
+   "code": "SUI",
+   "no": 11,
+   "goals": 2,
+   "ownGoals": 0
+  },
+  {
    "id": "431200",
    "name": "Daniel MUNOZ",
    "code": "COL",
@@ -305,26 +313,26 @@
    "ownGoals": 0
   },
   {
-   "id": "448355",
-   "name": "Leandro TROSSARD",
-   "code": "BEL",
-   "no": 10,
-   "goals": 2,
-   "ownGoals": 0
-  },
-  {
-   "id": "448214",
-   "name": "Malik TILLMAN",
-   "code": "USA",
-   "no": 17,
+   "id": "402920",
+   "name": "Lautaro MARTINEZ",
+   "code": "ARG",
+   "no": 22,
    "goals": 2,
    "ownGoals": 0
   }
  ],
  "cards": {
-  "yellow": 264,
-  "red": 14,
+  "yellow": 268,
+  "red": 15,
   "players": [
+   {
+    "id": "393480",
+    "name": "Breel EMBOLO",
+    "code": "SUI",
+    "no": 7,
+    "y": 1,
+    "r": 1
+   },
    {
     "id": "466624",
     "name": "Folarin BALOGUN",
@@ -476,18 +484,10 @@
     "no": 10,
     "y": 2,
     "r": 0
-   },
-   {
-    "id": "506279",
-    "name": "Caleb YIRENKYI",
-    "code": "GHA",
-    "no": 3,
-    "y": 2,
-    "r": 0
    }
   ]
  },
- "attAvg": 65236,
+ "attAvg": 65274,
  "biggestWin": {
   "diff": 6,
   "id": "400021464",
@@ -571,7 +571,7 @@
    "BRA": -8,
    "MAR": -7,
    "QAT": -12,
-   "SUI": -6,
+   "SUI": -9,
    "CIV": -4,
    "ECU": -12,
    "GER": -6,
@@ -592,7 +592,7 @@
    "SEN": -3,
    "IRQ": -8,
    "NOR": -3,
-   "ARG": -3,
+   "ARG": -6,
    "ALG": -3,
    "AUT": -5,
    "JOR": -4,
@@ -606,38 +606,7 @@
    "COL": -9
   }
  },
- "suspensions": {
-  "SUI": [
-   {
-    "id": "311558",
-    "name": "Granit XHAKA",
-    "bans": [
-     {
-      "type": "yellows",
-      "due": [
-       "400021451",
-       "400021535"
-      ],
-      "banned": "400021537"
-     }
-    ]
-   },
-   {
-    "id": "401448",
-    "name": "Denis ZAKARIA",
-    "bans": [
-     {
-      "type": "yellows",
-      "due": [
-       "400021447",
-       "400021535"
-      ],
-      "banned": "400021537"
-     }
-    ]
-   }
-  ]
- },
+ "suspensions": {},
  "upset": {
   "bits": 2.92,
   "p": 83,
