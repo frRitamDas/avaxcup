@@ -71430,7 +71430,7 @@
      "minute": "106'",
      "type": 2,
      "period": 9,
-     "sec": 37
+     "sec": 38
     }
    ],
    "bookings": [],
@@ -71802,6 +71802,12 @@
      "minute": "105'",
      "card": 1,
      "period": 7
+    },
+    {
+     "player": "430628",
+     "minute": "111'",
+     "card": 1,
+     "period": 9
     }
    ],
    "substitutions": [
@@ -71843,7 +71849,7 @@
     }
    ]
   },
-  "matchTime": "111'",
+  "matchTime": "120'+5'",
   "period": 9,
   "final": false,
   "secTried": true
